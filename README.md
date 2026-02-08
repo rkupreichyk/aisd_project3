@@ -10,11 +10,11 @@ Performance-First Design: Algorithms were optimized to handle large datasets wit
 
 # Input Data Format
 The engine is designed to parse and process graph data sets through standard input in a specific hierarchical format:
-k: The number of graphs to follow.
-n: The order (number of vertices) of the current graph.
-Neighbor Lists: For each of the n vertices, the program reads a list containing
-  s: The number of neighbors.
-  IDs: n IDs of adjacent vertices (ranging from 1 to n).
+* k: The number of graphs to follow.
+* n: The order (number of vertices) of the current graph.
+* Neighbor Lists: For each of the n vertices, the program reads a list containing
+  * s: The number of neighbors.
+  * IDs: n IDs of adjacent vertices (ranging from 1 to n).
 
 # Implementation & Optimization
 The engine analyzes several graph parameters, including degree sequences, bipartiteness (via custom DFS), and vertex eccentricity. To solve the NP-complete problem of vertex coloring, I implemented Greedy, LF (Largest First), and SLF (Saturation Largest First) heuristics.
@@ -22,8 +22,8 @@ The engine analyzes several graph parameters, including degree sequences, bipart
 In terms of optimization, the engine effectively handles connectivity analysis. By integrating a disjoint-set union (Union-Find) structure for component tracking, the program identifies connected components almost instantly. This efficiency proved particularly useful as it freed up the computational "budget" for more intensive tasks, such as the detection of C4 subgraphs and calculating the edges of the graph's complement.
 
 # Features Summary
-Degree Sequence: Sorted vertex degree calculation.
-Connectivity:Efficient component counting and bipartiteness testing.
-Graph Coloring: Heuristic-based coloring (Greedy, LF, SLF).
-Cycle Detection: Counting unique C4 subgraphs.
-Complement Metrics: Determining the number of edges in the complement graph.
+* Degree Sequence: Sorted vertex degree calculation.
+* Connectivity:Efficient component counting and bipartiteness testing.
+* Graph Coloring: Heuristic-based coloring (Greedy, LF, SLF).
+* Cycle Detection: Counting unique C4 subgraphs.
+* Complement Metrics: Determining the number of edges in the complement graph.
