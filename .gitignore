@@ -1,0 +1,5 @@
+.vs/
+*.obj
+*.exe
+tests/*.txt
+tests/_stdout/
